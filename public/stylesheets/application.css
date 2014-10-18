@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+
+#wrapper {
+  height: 100%;
+  width: 96%;
+  max-width: 920px;
+  margin: auto;
+  padding: 2%;
+  }
+
+
+
+#main {
+  width: 96%;
+  max-width: 920px;
+  margin: auto;
+  padding: 2%;
+  display: block;
+  text-align: center;
+}
+
+#main h3 {
+  display: block;
+  margin-bottom: 30px;
+}
+
+#loginButton {
+  border: 1px solid black !important;
+}
+
+.well {
+  min-height: 250px !important;
+}
+
+#inputDirections {
+  text-align: center;
+}
+
