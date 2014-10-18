@@ -38,9 +38,8 @@
         <br>
         <form ng-submit="numbersAlgo()" role="form">
           <div class="form-group">
-            <input type="file" ng-model="InputFile" required>
+            <input type="file" on-read-file="showContent($fileContent)"required>
           </div>
-          <button type="submit" class="btn btn-default btn-sm">Submit</button>
         </form>
 
       </div>
@@ -49,7 +48,10 @@
     <div class="col-sm-6">
       <div class="well">
         <h3><span class="fa fa-user"></span></h3>
-
+          <div ng-if="content">
+            <h2>File content is:</h2>
+            <pre>{{ content }}</pre>
+          </div>
 
       </div>
     </div>
