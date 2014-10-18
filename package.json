@@ -1,0 +1,25 @@
+{
+  "name": "Gravity_phone_db",
+  "version": "0.0.0",
+  "description": "Databse of phone numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StackDaddy/Gravity-PhoneNumbers.git"
+  },
+  "keywords": [
+    "Node.Js",
+    "MongoDB",
+    "Express",
+    "Passport.Js"
+  ],
+  "author": "Ryan M. Stack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StackDaddy/Gravity-PhoneNumbers/issues"
+  },
+  "homepage": "https://github.com/StackDaddy/Gravity-PhoneNumbers"
+}
