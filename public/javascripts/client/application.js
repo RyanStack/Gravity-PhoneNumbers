@@ -12,12 +12,12 @@ var App = angular.module('MyApp', ['ngRoute']);
       // route for the about page
       .when('/results', {
         templateUrl : '../templates/results.html',
-        // controller  : 'aboutController'
+        controller  : 'resultsCtrl'
       })
       // route for the contact page
       .when('/history', {
         templateUrl : '../templates/history.html',
-        // controller  : 'contactController'
+        controller  : 'historyCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -28,6 +28,7 @@ var App = angular.module('MyApp', ['ngRoute']);
 
 // Application controllers
 
+//Upload Controller
 App.controller('numbersCtrl', function($scope, $http, NumbersAlgorithm) {
 
   $scope.showContent = function($fileContent){
@@ -38,12 +39,38 @@ App.controller('numbersCtrl', function($scope, $http, NumbersAlgorithm) {
     };
   $scope.submit = function() {
     $http.post('/phoneListUpload', $scope.brokenDown).success(function(data) {
-      console.log(data)
+
     });
   }
 
   });
 
+//results controller
+App.controller('resultsCtrl', function($scope, $http, NumbersAlgorithm) {
+  $http.get('/phoneList').success(function(data) {
+      $scope.allNumbers = [];
+      var phoneUploads = data[0].uploads
+      for (var i=0; i<phoneUploads.length; i++) {
+        for (var j=0; j<phoneUploads[i].list.length; j++) {
+          $scope.allNumbers.push(phoneUploads[i].list[j])
+        }
+      }
+      $scope.results = NumbersAlgorithm.perform($scope.allNumbers)
+      console.log($scope.results)
+  });
+
+});
+
+//Upload history controller
+
+App.controller('historyCtrl', function($scope, $http, NumbersAlgorithm) {
+  $http.get('/phoneList').success(function(data) {
+      $scope.phoneUploads = data[0].uploads
+
+      console.log($scope.phoneUploads)
+  });
+
+});
 
 //Applciations Directives
 

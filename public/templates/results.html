@@ -1,1 +1,12 @@
-<h1>Results</h1>
+<!-- Results parial -->
+<div ng-controller="resultsCtrl" class="col-sm-6">
+  <div class="well">
+    <h3><span class="fa fa-user"></span></h3>
+    <div ng-if="results">
+      <h2>All Numbers and Count:</h2>
+      <pre ng-repeat="(key, value) in results">{{key}} : {{ value }}</pre>
+      <br>
+    </div>
+
+  </div>
+</div>

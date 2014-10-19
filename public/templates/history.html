@@ -1,1 +1,17 @@
-<h1>history</h1>
+<!-- Upload History Partial -->
+<div ng-controller="historyCtrl" class="col-sm-6">
+  <div class="well">
+    <h3><span class="fa fa-user"></span></h3>
+    <div ng-if="phoneUploads">
+      <h2>All Numbers and Count:</h2>
+      <div ng-repeat="upload in phoneUploads">
+        <p>Date: {{upload.date}} | Numbers: {{upload.amount}}</p>
+        <ul>
+          <li ng-repeat="number in upload.list">{{number}}</li>
+        </ul>
+      </div>
+      <br>
+    </div>
+
+  </div>
+</div>
