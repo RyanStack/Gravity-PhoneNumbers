@@ -1,0 +1,31 @@
+<div class="row" ng-controller="numbersCtrl">
+
+    <div class="col-sm-6">
+      <div class="well">
+        <h3 id="inputDirections">Upload Number Files</h3>
+        <br>
+        <hr>
+        <br>
+        <form ng-submit="numbersAlgo()" role="form">
+          <div class="form-group">
+            <input type="file" on-read-file="showContent($fileContent)" accept="text/plain" required>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="well">
+        <h3><span class="fa fa-user"></span></h3>
+          <div ng-if="content">
+            <h2>Decoded File Content:</h2>
+            <pre ng-repeat="(key, value) in decoded">{{key}}:{{ value }}</pre>
+            <br>
+            <a class="btn btn-default btn-sm" href="#">Save Numbers</a>
+          </div>
+
+      </div>
+    </div>
+
+  </div>

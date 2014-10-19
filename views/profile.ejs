@@ -15,48 +15,29 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script type="text/javascript" src="http://code.angularjs.org/1.2.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
     <script type="text/javascript" src="javascripts/client/application.js"></script>
 
 </head>
 <body ng-app="MyApp">
 <div class="container">
+  <nav class="nav">
+    <ul>
+      <li><a class="btn btn-default btn-sm" href="#results">All Results</a></li>
+      <li><a class="btn btn-default btn-sm" href="#history">Upload History</a></li>
+      <li><a class="btn btn-default btn-sm" href="#upload">Upload Tool</a></li>
+      <li id="logoutHelper"><a class="btn btn-default btn-sm" href="/logout">Logout</a></li>
+    </ul>
+</nav>
 
   <div class="page-header text-center">
     <h1><span class="fa fa-anchor"></span> Welcome <%= user.local.email %>! </h1>
-    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
   </div>
 
-  <div class="row" ng-controller="numbersCtrl">
+  <div ng-view></div>
 
-    <div class="col-sm-6">
-      <div class="well">
-        <h3 id="inputDirections">Upload Number Files</h3>
-        <br>
-        <hr>
-        <br>
-        <form ng-submit="numbersAlgo()" role="form">
-          <div class="form-group">
-            <input type="file" on-read-file="showContent($fileContent)" accept="text/plain" required>
-          </div>
-        </form>
 
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="well">
-        <h3><span class="fa fa-user"></span></h3>
-          <div ng-if="content">
-            <h2>File content is:</h2>
-            <pre>{{ decoded }}</pre>
-          </div>
-
-      </div>
-    </div>
-
-  </div>
 
 </div>
 </body>

@@ -1,4 +1,29 @@
-var App = angular.module('MyApp', []);
+var App = angular.module('MyApp', ['ngRoute']);
+
+  // configure our routes
+  App.config(function($routeProvider) {
+    console.log("in provider")
+    $routeProvider
+      // route for the home page
+      .when('/upload', {
+        templateUrl : '../templates/upload.html',
+        // controller  : 'mainController'
+      })
+      // route for the about page
+      .when('/results', {
+        templateUrl : '../templates/results.html',
+        // controller  : 'aboutController'
+      })
+      // route for the contact page
+      .when('/history', {
+        templateUrl : '../templates/history.html',
+        // controller  : 'contactController'
+      });
+  });
+
+
+
+
 
 App.controller('numbersCtrl', function($scope, $http, NumbersAlgorithm) {
 
