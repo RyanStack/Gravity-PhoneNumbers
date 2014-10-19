@@ -38,7 +38,7 @@
         <br>
         <form ng-submit="numbersAlgo()" role="form">
           <div class="form-group">
-            <input type="file" on-read-file="showContent($fileContent)"required>
+            <input type="file" on-read-file="showContent($fileContent)" accept="text/plain" required>
           </div>
         </form>
 
@@ -50,7 +50,7 @@
         <h3><span class="fa fa-user"></span></h3>
           <div ng-if="content">
             <h2>File content is:</h2>
-            <pre>{{ content }}</pre>
+            <pre>{{ decoded }}</pre>
           </div>
 
       </div>
