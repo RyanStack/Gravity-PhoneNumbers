@@ -1,3 +1,4 @@
+var User = require('./models/user.js');
 
 module.exports = function(app, passport) {
 
@@ -62,6 +63,33 @@ module.exports = function(app, passport) {
     req.logout();
     res.redirect('/');
   });
+
+  //====DATABASE Routing
+
+  app.post('/phoneListUpload', function(req, res) {
+
+    var userIdentification = req.user._id;
+    var data = req.body;
+    var phoneGroupAmount = data.length
+    var phoneGroupDate = Date.now();
+    console.log(userIdentification);
+    console.log(data);
+
+    var phoneSet = {
+      amount: phoneGroupAmount,
+      date: phoneGroupDate,
+      list: data
+    };
+
+
+    User.update({ _id: userIdentification}, {$push: { uploads : phoneSet }}, function(err, data) {
+          if (err) { console.log(err) }
+      });
+  })
+
+
+
+
 };
 
 // route middleware to make sure a user is logged in

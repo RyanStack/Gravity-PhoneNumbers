@@ -7,7 +7,7 @@ var App = angular.module('MyApp', ['ngRoute']);
       // route for the home page
       .when('/upload', {
         templateUrl : '../templates/upload.html',
-        // controller  : 'mainController'
+        controller  : 'numbersCtrl'
       })
       // route for the about page
       .when('/results', {
@@ -18,12 +18,15 @@ var App = angular.module('MyApp', ['ngRoute']);
       .when('/history', {
         templateUrl : '../templates/history.html',
         // controller  : 'contactController'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
   });
 
 
 
-
+// Application controllers
 
 App.controller('numbersCtrl', function($scope, $http, NumbersAlgorithm) {
 
@@ -33,11 +36,18 @@ App.controller('numbersCtrl', function($scope, $http, NumbersAlgorithm) {
         $scope.decoded = NumbersAlgorithm.perform($scope.brokenDown)
         console.log($scope.decoded)
     };
+  $scope.submit = function() {
+    $http.post('/phoneListUpload', $scope.brokenDown).success(function(data) {
+      console.log(data)
+    });
+  }
+
   });
 
 
-//File Reading Directive
+//Applciations Directives
 
+//File Reading Directive
 App.directive('onReadFile', function ($parse) {
   return {
     restrict: 'A',
@@ -60,9 +70,9 @@ App.directive('onReadFile', function ($parse) {
   };
 });
 
+//Application Services
 
 //Angular Factory for Number Algorithm
-
 App.factory('NumbersAlgorithm', function() {
   //Helper Functions
   function isNumber(obj) { return !isNaN(parseFloat(obj)) }

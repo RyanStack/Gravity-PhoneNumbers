@@ -8,7 +8,12 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String
-    }
+    },
+    uploads: [{
+        amount: Number,
+        date: Date,
+        list: []
+    }]
 
 });
 
