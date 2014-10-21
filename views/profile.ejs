@@ -18,10 +18,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
     <script type="text/javascript" src="javascripts/client/application.js"></script>
+    <script type="text/javascript" src="javascripts/client/controllers/uploadCtrl.js"></script>
+    <script type="text/javascript" src="javascripts/client/controllers/resultsCtrl.js"></script>
+    <script type="text/javascript" src="javascripts/client/controllers/historyCtrl.js"></script>
+    <script type="text/javascript" src="javascripts/client/services/numbersAlgorithm.js"></script>
+    <script type="text/javascript" src="javascripts/client/services/dataProvider.js"></script>
 
 </head>
 <body ng-app="MyApp">
-<div class="container">
+<div id="wrapper">
   <nav class="nav">
     <ul>
       <li><a class="btn btn-default btn-sm" href="#results">All Numbers</a></li>
@@ -29,7 +34,7 @@
       <li><a class="btn btn-default btn-sm" href="#upload">Upload Tool</a></li>
       <li id="logoutHelper"><a class="btn btn-default btn-sm" href="/logout">Logout</a></li>
     </ul>
-</nav>
+  </nav>
 
   <div class="page-header text-center">
     <h1><span class="fa fa-anchor"></span> Welcome <%= user.local.email %>! </h1>
