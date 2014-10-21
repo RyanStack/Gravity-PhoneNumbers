@@ -1,5 +1,7 @@
+//Require the User model to make calls to DB
 var User = require('./models/user.js');
 
+// expose this function to our app using module.exports
 module.exports = function(app, passport) {
 
   // =====================================
@@ -65,14 +67,16 @@ module.exports = function(app, passport) {
   });
 
   //====DATABASE Routing
-  //upload a new phone list
+  //Upload a new phone list
   app.post('/phoneListUpload', function(req, res) {
 
+    //Declare information
     var userIdentification = req.user._id;
     var data = req.body;
     var phoneGroupAmount = data.length
     var phoneGroupDate = Date.now();
 
+    //Create Database Object
     var phoneSet = {
       amount: phoneGroupAmount,
       date: phoneGroupDate,
@@ -83,7 +87,9 @@ module.exports = function(app, passport) {
           if (err) { console.log(err) }
       });
   })
-  //retreive all phone lists
+
+
+  //Retreive all phone lists
   app.get('/phoneList', function(req, res) {
     var userIdentification = req.user._id;
     User.find({_id: userIdentification}).exec(
@@ -98,7 +104,7 @@ module.exports = function(app, passport) {
 
 
 
-
+//end of module
 };
 
 // route middleware to make sure a user is logged in

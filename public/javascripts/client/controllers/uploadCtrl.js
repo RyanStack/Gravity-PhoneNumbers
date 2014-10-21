@@ -1,3 +1,5 @@
+//Upload Controller
+
 App.controller('uploadCtrl', function($scope, $http, NumbersAlgorithm, dataProvider) {
 
   $scope.showContent = function($fileContent){
@@ -9,4 +11,4 @@ App.controller('uploadCtrl', function($scope, $http, NumbersAlgorithm, dataProvi
     dataProvider.uploadPhoneList($scope.brokenDown)
   }
 
-  });
+});

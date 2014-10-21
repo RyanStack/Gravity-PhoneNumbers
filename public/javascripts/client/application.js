@@ -1,5 +1,5 @@
+//Aplication Router
 var App = angular.module('MyApp', ['ngRoute']);
-
   // configure our routes
   App.config(function($routeProvider) {
     console.log("in provider")
@@ -19,6 +19,7 @@ var App = angular.module('MyApp', ['ngRoute']);
         templateUrl : '../templates/history.html',
         controller  : 'historyCtrl'
       })
+      // route-redirection for mispelling
       .otherwise({
         redirectTo: '/'
       });

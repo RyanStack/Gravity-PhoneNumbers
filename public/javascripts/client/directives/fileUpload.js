@@ -1,3 +1,5 @@
+//File upload directive
+
 App.directive('onReadFile', function ($parse) {
   return {
     restrict: 'A',

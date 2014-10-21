@@ -1,8 +1,8 @@
-//Application Services
-
-//Angular Factory for Number Algorithm
+//Angular Service for Number Algorithm
 App.factory('NumbersAlgorithm', function() {
+  //----------------
   //Helper Functions
+  //----------------
   function isNumber(obj) { return !isNaN(parseFloat(obj)) }
 
   function isUpperCaseLetter(obj) { return /[A-Z]/.test(obj) }
@@ -18,9 +18,13 @@ App.factory('NumbersAlgorithm', function() {
                   else if (letter == "W" || letter == "Q" || letter == "Y") { return 9 }
                 }
 
-              function noHyphen(str) { return !(/-/.test(str)) }
+  function noHyphen(str) { return !(/-/.test(str)) }
 
+
+
+  //------------------
   //Decoding Algorithm
+  //-------------------
 
   function Algo(arr) {
   //Remove element at first index and store in listCount
@@ -59,6 +63,9 @@ App.factory('NumbersAlgorithm', function() {
   return decodedList
 }
 
+//--------------------------------------------------------
+
+//Return Public API
 return {
   perform: function(arr) {
     return Algo(arr);
