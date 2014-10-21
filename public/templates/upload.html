@@ -1,29 +1,24 @@
 <!-- Upload Partial -->
 <div class="row" ng-controller="uploadCtrl">
 
+    <div class="col-sm-3"></div>
     <div class="col-sm-6">
       <div class="well">
-        <h3 id="inputDirections">Upload Number Files</h3>
+        <input value="Choose Number File" type="file" on-read-file="showContent($fileContent)" accept="text/plain" required>
         <br>
         <hr>
-        <br>
-        <input type="file" on-read-file="showContent($fileContent)" accept="text/plain" required>
-
-
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="well">
-        <h3><span class="fa fa-user"></span></h3>
-          <div ng-if="content">
-            <h2>Decoded File Content:</h2>
+        <div ng-if="content">
+          <div>
+            <h2 class="black">Decoded File Content:</h2>
+            <a id="floatRight" class="btn btn-default btn-sm" ng-click="submit()" href>Save Numbers</a>
+          </div>
+            <br>
+            <br>
             <pre ng-repeat="(key, value) in decoded">{{key}}:{{ value }}</pre>
             <br>
-            <a class="btn btn-default btn-sm" ng-click="submit()" href>Save Numbers</a>
-          </div>
-
+        </div>
       </div>
     </div>
+    <div class="col-sm-3"></div>
 
-  </div>
+</div>
