@@ -40,7 +40,7 @@ App.factory('dataProvider', function($http) {
 
   //Post Request to upload a new phone list
   function uploadPhoneList(list) {
-     return $http.post('/phoneListUpload', list).success(function(data) {});
+    $http.post('/phoneListUpload', list)
   }
 
 })

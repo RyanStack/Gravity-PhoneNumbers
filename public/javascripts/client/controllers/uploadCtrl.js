@@ -9,6 +9,9 @@ App.controller('uploadCtrl', function($scope, $http, NumbersAlgorithm, dataProvi
     };
   $scope.submit = function() {
     dataProvider.uploadPhoneList($scope.brokenDown)
+    $scope.content = null;
+    $scope.successU = true;
+
   }
 
 });

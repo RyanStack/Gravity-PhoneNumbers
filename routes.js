@@ -85,6 +85,7 @@ module.exports = function(app, passport) {
 
     User.update({ _id: userIdentification}, {$push: { uploads : phoneSet }}, function(err, data) {
           if (err) { console.log(err) }
+          res.json("success")
       });
   })
 
