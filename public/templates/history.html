@@ -7,8 +7,9 @@
       <div ng-if="phoneUploads">
         <h2 class="black">Upload History:</h2>
         <br>
-        <div class="well" ng-repeat="upload in phoneUploads">
-          <p>Date: {{upload.date}} | Numbers: {{upload.amount}}</p>
+        <div class="well" ng-repeat="upload in phoneUploads | filter:searchText | filter:searchDate">
+          <p>Date: {{upload.date | date:"MM/dd/yyyy"}}</p>
+          <p>Quantity: {{upload.amount}}</p>
           <ul>
             <li ng-repeat="number in upload.list">{{number}}</li>
           </ul>
@@ -18,5 +19,12 @@
 
     </div>
   </div>
-  <div class="col-sm-3"></div>
+  <div class="col-sm-3">
+    <p>Search by Number:</p>
+    <input type="text" ng-model="searchText">
+    <br>
+    <br>
+    <p>Search by Date</p>
+    <input type="date" ng-model="searchDate">
+  </div>
 </div>
