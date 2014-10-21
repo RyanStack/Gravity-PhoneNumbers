@@ -2,7 +2,7 @@ Gravity-PhoneNumbers
 ====================
 Gravity-Phone Numbers is a secure web application that allows users to upload and decode text files of non-standard telephone numbers.
 
-Getting Started:  Create an account by following the Sign Up link.  Provide the application with a unique username and password.  Once completed, login to access the applications features.  
+Getting Started:  Create an account by following the Sign Up link.  Provide the application with a unique username and password.  Once completed, follow the login procedure to access the applications features.  
 
 Using the Application:  
 
