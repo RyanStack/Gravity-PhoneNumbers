@@ -34,6 +34,7 @@ html, body {
 
 .well {
   min-height: 250px !important;
+  color: black;
 }
 
 #inputDirections {
